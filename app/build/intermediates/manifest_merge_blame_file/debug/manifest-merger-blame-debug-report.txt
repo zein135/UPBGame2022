@@ -1,0 +1,41 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="edu.upb.lp.genericgame" >
+4
+5    <uses-sdk
+5-->C:\UPB\Programacion I\UPBGame2021\app\src\main\AndroidManifest.xml:5:5-17
+6        android:minSdkVersion="11"
+6-->C:\UPB\Programacion I\UPBGame2021\app\src\main\AndroidManifest.xml:5:5-17
+7        android:targetSdkVersion="21" />
+7-->C:\UPB\Programacion I\UPBGame2021\app\src\main\AndroidManifest.xml:5:5-17
+8
+9    <application
+9-->C:\UPB\Programacion I\UPBGame2021\app\src\main\AndroidManifest.xml:7:5-20:19
+10        android:allowBackup="true"
+10-->C:\UPB\Programacion I\UPBGame2021\app\src\main\AndroidManifest.xml:10:9-35
+11        android:debuggable="true"
+12        android:icon="@drawable/ic_launcher"
+12-->C:\UPB\Programacion I\UPBGame2021\app\src\main\AndroidManifest.xml:9:9-45
+13        android:label="@string/app_name"
+13-->C:\UPB\Programacion I\UPBGame2021\app\src\main\AndroidManifest.xml:8:9-41
+14        android:testOnly="true" >
+15        <activity
+15-->C:\UPB\Programacion I\UPBGame2021\app\src\main\AndroidManifest.xml:11:9-19:20
+16            android:name="edu.upb.lp.androidInternalFiles.AndroidGameActivity"
+16-->C:\UPB\Programacion I\UPBGame2021\app\src\main\AndroidManifest.xml:12:13-79
+17            android:label="@string/app_name" >
+17-->C:\UPB\Programacion I\UPBGame2021\app\src\main\AndroidManifest.xml:13:13-45
+18            <intent-filter>
+18-->C:\UPB\Programacion I\UPBGame2021\app\src\main\AndroidManifest.xml:14:13-18:29
+19                <action android:name="android.intent.action.MAIN" />
+19-->C:\UPB\Programacion I\UPBGame2021\app\src\main\AndroidManifest.xml:15:17-69
+19-->C:\UPB\Programacion I\UPBGame2021\app\src\main\AndroidManifest.xml:15:25-66
+20
+21                <category android:name="android.intent.category.LAUNCHER" />
+21-->C:\UPB\Programacion I\UPBGame2021\app\src\main\AndroidManifest.xml:17:17-77
+21-->C:\UPB\Programacion I\UPBGame2021\app\src\main\AndroidManifest.xml:17:27-74
+22            </intent-filter>
+23        </activity>
+24    </application>
+25
+26</manifest>

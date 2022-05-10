@@ -1,0 +1,78 @@
+[
+    {
+        "merged": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_colors_blue.png.flat",
+        "source": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\src\\main\\res\\drawable\\colors_blue.png"
+    },
+    {
+        "merged": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bugs_sad_bug.jpg.flat",
+        "source": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\src\\main\\res\\drawable\\bugs_sad_bug.jpg"
+    },
+    {
+        "merged": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bugs_hungry_bug.jpeg.flat",
+        "source": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\src\\main\\res\\drawable\\bugs_hungry_bug.jpeg"
+    },
+    {
+        "merged": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_colors_grey.png.flat",
+        "source": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\src\\main\\res\\drawable\\colors_grey.png"
+    },
+    {
+        "merged": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_colors_white.png.flat",
+        "source": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\src\\main\\res\\drawable\\colors_white.png"
+    },
+    {
+        "merged": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bugs_dead_bug_selected.png.flat",
+        "source": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\src\\main\\res\\drawable\\bugs_dead_bug_selected.png"
+    },
+    {
+        "merged": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bugs_hungry_bug_selected.jpg.flat",
+        "source": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\src\\main\\res\\drawable\\bugs_hungry_bug_selected.jpg"
+    },
+    {
+        "merged": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bugs_dead_bug.png.flat",
+        "source": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\src\\main\\res\\drawable\\bugs_dead_bug.png"
+    },
+    {
+        "merged": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bugs_happy_bug.jpg.flat",
+        "source": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\src\\main\\res\\drawable\\bugs_happy_bug.jpg"
+    },
+    {
+        "merged": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bugs_happy_bug_selected.jpg.flat",
+        "source": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\src\\main\\res\\drawable\\bugs_happy_bug_selected.jpg"
+    },
+    {
+        "merged": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bugs_old_bug.jpg.flat",
+        "source": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\src\\main\\res\\drawable\\bugs_old_bug.jpg"
+    },
+    {
+        "merged": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\raw_ping.mp3.flat",
+        "source": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\src\\main\\res\\raw\\ping.mp3"
+    },
+    {
+        "merged": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bugs_old_bug_selected.jpg.flat",
+        "source": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\src\\main\\res\\drawable\\bugs_old_bug_selected.jpg"
+    },
+    {
+        "merged": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bugs_sad_bug_selected.jpg.flat",
+        "source": "C:\\Users\\WinUser\\StudioProjects\\UPBGame2021\\app\\src\\main\\res\\drawable\\bugs_sad_bug_selected.jpg"
+    }
+]

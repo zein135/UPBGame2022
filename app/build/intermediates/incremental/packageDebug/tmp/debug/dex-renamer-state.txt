@@ -1,0 +1,4 @@
+#Mon May 09 20:30:18 CLT 2022
+base.0=C\:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
