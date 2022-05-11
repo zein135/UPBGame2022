@@ -1,3 +1,4 @@
+edu.upb.lp.genericgame:drawable/demon_red_charging = 0x7f02001b
 edu.upb.lp.genericgame:id/maingrid = 0x7f030002
 edu.upb.lp.genericgame:drawable/demon_red = 0x7f020019
 edu.upb.lp.genericgame:style/AppBaseTheme = 0x7f070000

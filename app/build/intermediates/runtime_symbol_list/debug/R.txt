@@ -26,6 +26,7 @@ int drawable colors_white 0x7f020016
 int drawable demon_grey 0x7f020017
 int drawable demon_purple 0x7f020018
 int drawable demon_red 0x7f020019
+int drawable demon_red_charging 0x7f02001b
 int drawable ic_launcher 0x7f02001a
 int id bottomSection 0x7f030000
 int id buttons 0x7f030001

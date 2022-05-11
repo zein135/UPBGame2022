@@ -5,6 +5,7 @@ public class Player {
     private int[] numUnits = new int[8];
     private int ultimoHorizontal;
     private int ultimoVertical;
+    private ActionsManager actionsManager=new ActionsManager(tablero);
     public void setUltimoVertical(int vertical){
         ultimoVertical = vertical;
     }
@@ -23,6 +24,9 @@ public class Player {
     public int generateRandom(int min,int max){
         int random=(int)Math.floor(Math.random()*(max-min+1)+min);
         return random;
+    }
+    public int[] getNumUnits(){
+        return numUnits;
     }
     public void initBoard(){
         for(int i=0;i<numUnits.length;i++){
@@ -53,7 +57,18 @@ public class Player {
         }
         return tablero;
     }
-
+    public void mover(){
+        numUnits[ultimoVertical]--;
+        actionsManager.mover(ultimoVertical);
+    }
+    public void enviar(){
+        numUnits[ultimoVertical]++;
+        actionsManager.enviar(ultimoVertical);
+    }
+    public void eliminar(){
+        numUnits[ultimoVertical]--;
+        actionsManager.eliminar(ultimoHorizontal,ultimoVertical);
+    }
 
 
 }

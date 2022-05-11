@@ -6,7 +6,7 @@ public class ClashOfHeroes {
     private Ficha[][] board=new Ficha[13][8];
     private Player jugador = new Player();
     private Enemy enemigo = new Enemy();
-    private ActionsManager actionsManager=new ActionsManager();
+    //private ActionsManager actionsManager=new ActionsManager();
     public ClashOfHeroes(ClashOfHeroesUI ui){
         this.ui=ui;
     }
@@ -80,7 +80,8 @@ public class ClashOfHeroes {
     }
 
     public void mover(){
-        actionsManager.mover(jugador.getTablero(), jugador.getUltimoVertical());
+        jugador.mover();
+        //actionsManager.mover(jugador.getTablero(), jugador.getUltimoVertical());
         actualizarTableroJugador(jugador.getTablero());
         draw();
         ui.removerBoton("Mover");
@@ -88,14 +89,21 @@ public class ClashOfHeroes {
     }
 
     public void enviar(){
-        actionsManager.enviar(jugador.getTablero(),jugador.getUltimoVertical());
-        actualizarTableroJugador(jugador.getTablero());
-        draw();
-        ui.removerBoton("Enviar");
+        if(jugador.getNumUnits()[jugador.getUltimoVertical()]<6) {
+            jugador.enviar();
+            //actionsManager.enviar(jugador.getTablero(),jugador.getUltimoVertical());
+            actualizarTableroJugador(jugador.getTablero());
+            draw();
+            ui.removerBoton("Enviar");
+        }
+        else{
+            //TODO enviar mensaje limite en la columna
+        }
     }
 
     public void eliminar() {
-        actionsManager.eliminar(jugador.getTablero(), jugador.getUltimoHorizontal(),jugador.getUltimoVertical());
+        jugador.eliminar();
+        //actionsManager.eliminar(jugador.getTablero(), jugador.getUltimoHorizontal(),jugador.getUltimoVertical());
         actualizarTableroJugador(jugador.getTablero());
         draw();
         ui.removerBoton("Eliminar");
