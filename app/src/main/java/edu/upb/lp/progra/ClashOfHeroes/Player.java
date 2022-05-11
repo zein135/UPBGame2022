@@ -6,6 +6,7 @@ public class Player {
     private int ultimoHorizontal;
     private int ultimoVertical;
     private ActionsManager actionsManager=new ActionsManager(tablero);
+    public int movimientos=0;
     public void setUltimoVertical(int vertical){
         ultimoVertical = vertical;
     }
@@ -64,11 +65,18 @@ public class Player {
     public void enviar(){
         numUnits[ultimoVertical]++;
         actionsManager.enviar(ultimoVertical);
+        movimientos--;
     }
     public void eliminar(){
         numUnits[ultimoVertical]--;
         actionsManager.eliminar(ultimoHorizontal,ultimoVertical);
+        movimientos--;
     }
-
+    public boolean tengoTurnos(){
+        return movimientos!=0;
+    }
+    public void setMovimientos(int movimientos){
+        this.movimientos=movimientos;
+    }
 
 }

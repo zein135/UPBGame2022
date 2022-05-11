@@ -4,8 +4,9 @@ public class ClashOfHeroes {
     private static final int MAX_UNITS = 20;
     private ClashOfHeroesUI ui;
     private Ficha[][] board=new Ficha[13][8];
-    private Player jugador = new Player();
-    private Enemy enemigo = new Enemy();
+    private Player jugador1 = new Player();
+    private Player jugador2 = new Player();
+    private boolean turnoJugador1=true;
     //private ActionsManager actionsManager=new ActionsManager();
     public ClashOfHeroes(ClashOfHeroesUI ui){
         this.ui=ui;
@@ -20,19 +21,18 @@ public class ClashOfHeroes {
                 board[i][j]=null;
             }
         }
-        initEnemyBoard();
-        initPlayerBoard();
+        Ficha[][] tableroJugador1=initPlayerBoard(jugador1);
+        Ficha[][] tableroJugador2=initPlayerBoard(jugador2);
+        actualizarTableroJugador(tableroJugador1);
+        actualizarTableroEnemigo(tableroJugador2);
         draw();
     }
-    public void initPlayerBoard(){
+    public Ficha[][] initPlayerBoard(Player jugador){
         jugador.initBoard();
         Ficha[][] tableroJugador=jugador.LlenarTablero(MAX_UNITS);
-        actualizarTableroJugador(tableroJugador);
-    }
-    public void initEnemyBoard(){
-        enemigo.initBoard();
-        Ficha[][] tableroEnemy= enemigo.LlenarTablero(MAX_UNITS);
-        actualizarTableroEnemigo(tableroEnemy);
+        //actualizarTableroJugador(tableroJugador);
+        jugador.setMovimientos(3);
+        return tableroJugador;
     }
 
     private void actualizarTableroJugador(Ficha[][] tableroJugador) {
@@ -64,49 +64,98 @@ public class ClashOfHeroes {
         }
     }
     public void click(int horizontal,int vertical){
+        boolean seSelecciono=false;
         draw();
-
-        jugador.setUltimoHorizontal(horizontal-7);
-        jugador.setUltimoVertical(vertical);
-        if(board[horizontal][vertical]!=null){
-            //ui.drawUnit(horizontal,vertical,"colors_blue");//board[horizontal][vertical].getName()+"_selected");
-            ui.dibujarBoton("Eliminar");
-            ui.dibujarBoton("Mover");
+        if(turnoJugador1){
+            if(horizontal>=7 && horizontal<=12){
+                jugador1.setUltimoVertical(vertical);
+                jugador1.setUltimoHorizontal(horizontal-7);
+                seSelecciono=(board[horizontal][vertical]!=null);
+            }
+        } else{
+            if(horizontal<=5){
+                jugador2.setUltimoHorizontal(5-horizontal);
+                jugador2.setUltimoVertical(7-vertical);
+                seSelecciono=(board[horizontal][vertical]!=null);
+            }
         }
-        else{
-            ui.removerBoton("Eliminar");
-            ui.removerBoton("Mover");
+        if(seSelecciono){
+            if(board[horizontal][vertical]!=null){
+                //ui.drawUnit(horizontal,vertical,"colors_blue");//board[horizontal][vertical].getName()+"_selected");
+                ui.dibujarBoton("Eliminar");
+                ui.dibujarBoton("Mover");
+            }
+            else{
+                ui.removerBoton("Eliminar");
+                ui.removerBoton("Mover");
+            }
         }
     }
-
+    public Player obtenerJugadorActual(){
+        Player jugadorActual;
+        if(turnoJugador1) jugadorActual=jugador1;
+        else jugadorActual=jugador2;
+        return jugadorActual;
+    }
+    public void siCambiaTurnoJugador(){
+        if(turnoJugador1){
+            if(!jugador1.tengoTurnos()){
+                turnoJugador1=false;
+                //TODO empieza turno del jugador
+                jugador2.setMovimientos(3);
+                ui.mensajeTemporal("Turno de Jugador 2");
+            }
+        }
+        else{
+            if(!jugador2.tengoTurnos()){
+                turnoJugador1=true;
+                jugador1.setMovimientos(3);
+                ui.mensajeTemporal("Turno de Jugador 1");
+            }
+        }
+    }
     public void mover(){
-        jugador.mover();
-        //actionsManager.mover(jugador.getTablero(), jugador.getUltimoVertical());
-        actualizarTableroJugador(jugador.getTablero());
+        if(turnoJugador1){
+            jugador1.mover();
+            actualizarTableroJugador(jugador1.getTablero());
+        }
+        else{
+            jugador2.mover();
+            actualizarTableroEnemigo(jugador2.getTablero());
+        }
         draw();
         ui.removerBoton("Mover");
         ui.dibujarBoton("Enviar");
     }
 
     public void enviar(){
-        if(jugador.getNumUnits()[jugador.getUltimoVertical()]<6) {
-            jugador.enviar();
+        Player jugadorActual = obtenerJugadorActual();
+        if(jugadorActual.getNumUnits()[jugadorActual.getUltimoVertical()]<6) {
+            jugadorActual.enviar();
             //actionsManager.enviar(jugador.getTablero(),jugador.getUltimoVertical());
-            actualizarTableroJugador(jugador.getTablero());
+            if(turnoJugador1)
+                actualizarTableroJugador(jugadorActual.getTablero());
+            else
+                actualizarTableroEnemigo(jugadorActual.getTablero());
             draw();
             ui.removerBoton("Enviar");
+            siCambiaTurnoJugador();
         }
         else{
-            //TODO enviar mensaje limite en la columna
+            ui.mensajeTemporal("Te saliste del tablero xD");
         }
     }
 
     public void eliminar() {
-        jugador.eliminar();
-        //actionsManager.eliminar(jugador.getTablero(), jugador.getUltimoHorizontal(),jugador.getUltimoVertical());
-        actualizarTableroJugador(jugador.getTablero());
+        Player jugadorActual=obtenerJugadorActual();
+        jugadorActual.eliminar();
+        if(turnoJugador1)
+            actualizarTableroJugador(jugadorActual.getTablero());
+        else
+            actualizarTableroEnemigo(jugadorActual.getTablero());
         draw();
         ui.removerBoton("Eliminar");
+        siCambiaTurnoJugador();
     }
 
 }

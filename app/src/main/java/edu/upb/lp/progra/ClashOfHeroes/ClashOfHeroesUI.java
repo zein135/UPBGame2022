@@ -55,4 +55,7 @@ public class ClashOfHeroesUI implements UI {
     public void removerBoton(String nombre) {
         gui.removeButton(nombre);
     }
+    public void mensajeTemporal(String mensaje){
+        gui.showTemporaryMessage(mensaje);
+    }
 }
