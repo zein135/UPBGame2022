@@ -7,6 +7,7 @@ public class ClashOfHeroes {
     private Player jugador1 = new Player();
     private Player jugador2 = new Player();
     private boolean turnoJugador1=true;
+    private JaladorHaciaAtras jalador = new JaladorHaciaAtras(this);
     //private ActionsManager actionsManager=new ActionsManager();
     public ClashOfHeroes(ClashOfHeroesUI ui){
         this.ui=ui;
@@ -21,6 +22,9 @@ public class ClashOfHeroes {
                 board[i][j]=null;
             }
         }
+        jugador1.setEnemigo(jugador2);
+        jugador2.setEnemigo(jugador1);
+        jugador1.asignarJalador(jalador);
         Ficha[][] tableroJugador1=initPlayerBoard(jugador1);
         Ficha[][] tableroJugador2=initPlayerBoard(jugador2);
         actualizarTableroJugador(tableroJugador1);
@@ -99,6 +103,13 @@ public class ClashOfHeroes {
         return jugadorActual;
     }
     public void siCambiaTurnoJugador(){
+        /*
+           Player jugadorActual -> jugador1 -> jugador2
+           Player contrincante  -> jugador2 -> jugador1
+           coordenadas para el jugador2 arreglar la fila
+           jalarhaciaatras jalarhaciaadelante
+
+        */
         if(turnoJugador1){
             if(!jugador1.tengoTurnos()){
                 turnoJugador1=false;
@@ -113,8 +124,11 @@ public class ClashOfHeroes {
                 jugador1.setMovimientos(3);
                 ui.mensajeTemporal("Turno de Jugador 1");
                 jugador1.verFichasCargadas();
+                actualizarTableroEnemigo(jugador2.getTablero());
+                actualizarTableroJugador(jugador1.getTablero());
             }
         }
+        draw();
     }
     public void mover(){
         if(turnoJugador1){
@@ -127,6 +141,7 @@ public class ClashOfHeroes {
         }
         draw();
         ui.removerBoton("Mover");
+        jalador.start();
         ui.dibujarBoton("Enviar");
     }
 
@@ -164,6 +179,9 @@ public class ClashOfHeroes {
         jugadorActual.jalarHaciaAtras();
         actualizarTableroJugador(jugadorActual.getTablero());
         draw();
+    }
+    public void executeLater(Runnable r, int ms){
+        ui.executeLater(r,ms);
     }
 }
 

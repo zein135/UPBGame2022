@@ -5,11 +5,15 @@ public class ActionsManager {
     private Ficha[][] tablero;
     private int verticalFichaSelec;
     private int horizontalFichaSelec;
+    private JaladorHaciaAtras jalador;
     //va a hacer las acciones
     // Cuando seleccionamos una celda 1 boton "Eliminar", si lo presionamos
     // se elimina la unidad y las unidades detras avanzan una casilla
     public ActionsManager(Ficha[][] tablero){
         this.tablero=tablero;
+    }
+    public void setJalador(JaladorHaciaAtras jalador){
+        this.jalador=jalador;
     }
     public void eliminar(int horizontal, int vertical) {
         //eliminar tenga dos parametros la fila y la columna que vamos a eliminar
@@ -32,7 +36,7 @@ public class ActionsManager {
     }
     public boolean verficarHorizontal(int fila,int col){
         for(int i=fila;i<fila+3;i++){
-            if(tablero[i][col]==null) return false;
+            if(tablero[i][col]==null || tablero[i][col].getCargando()) return false;
         }
         return igual(tablero[fila][col],tablero[fila+1][col]) && igual(tablero[fila][col],tablero[fila+2][col]);
     }
@@ -92,7 +96,37 @@ public class ActionsManager {
             if (horizontalFichaSelec < tablero.length)
                 tablero[horizontalFichaSelec][verticalFichaSelec] = fichaSelec;
             else {
-                //TODO La ficha se fue tablero
+                jalador.stop();
+            }
+        }
+    }
+    public void meAtacan(int col, int ataqueEnemigo) {
+        for(int fila=0; fila<tablero.length;fila++){
+            // if(condicion)
+            if (tablero[fila][col]!=null && tablero[fila][col].getVida()<=ataqueEnemigo){
+                ataqueEnemigo-=tablero[fila][col].getVida();
+                //eliminar(fila,col);
+                tablero[fila][col]=null;
+            } /*else {
+                if(tablero[fila][col]!=null){
+                    tablero[fila][col].setVida(tablero[fila][col].getVida()-ataqueEnemigo);
+                    ataqueEnemigo=0;
+                }
+            }*/
+        }
+
+    }
+    public void avanzarFichas(){
+        for(int fila=1;fila<tablero.length;fila++){
+            for(int col=0;col<tablero[fila].length;col++){
+                if(tablero[fila][col]!=null){
+                    int horizontal = fila;
+                    while(horizontal!=0 && tablero[horizontal-1][col]==null) {
+                        tablero[horizontal-1][col]=tablero[horizontal][col];
+                        tablero[horizontal][col]=null;
+                        horizontal--;
+                    }
+                }
             }
         }
     }

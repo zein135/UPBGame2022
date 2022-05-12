@@ -60,4 +60,8 @@ public class ClashOfHeroesUI implements UI {
     public void mensajeTemporal(String mensaje){
         gui.showTemporaryMessage(mensaje);
     }
+
+    public void executeLater(Runnable r, int ms) {
+       gui.executeLater(r,ms);
+    }
 }

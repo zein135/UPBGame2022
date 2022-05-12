@@ -7,6 +7,8 @@ public class Player {
     private int ultimoVertical;
     private ActionsManager actionsManager=new ActionsManager(tablero);
     public int movimientos=0;
+    private Player enemigo;
+
     public void setUltimoVertical(int vertical){
         ultimoVertical = vertical;
     }
@@ -31,6 +33,9 @@ public class Player {
     }
     public void setMovimientos(int movimientos){
         this.movimientos=movimientos;
+    }
+    public void setEnemigo(Player enemigo){
+        this.enemigo=enemigo;
     }
     public void initBoard(){
         for(int i=0;i<numUnits.length;i++){
@@ -81,16 +86,26 @@ public class Player {
 
     public void verFichasCargadas(){
        // for( declaracion de variable ; condicion ; instruccion)
+        ActionsManager actionsManagerEnemigo=enemigo.getActionsManager();
         for(int fila=0; fila< tablero.length;fila++ ){
-            for(int col=0;col< tablero.length;col++){
-               if(tablero[fila][col]!= null && tablero[fila][col].getCargando()){
-                   
+            for(int col=0;col< tablero[fila].length;col++){
+               if(tablero[fila][col]!=null && tablero[fila][col].getCargando()){
+                    actionsManagerEnemigo.meAtacan(col,tablero[fila][col].getAtaque());
+                    tablero[fila][col]=null;
+                    //actionsManager.eliminar(fila,col);
+                    numUnits[col]--;
                }
             }
-
         }
+        actionsManagerEnemigo.avanzarFichas();
+        actionsManager.avanzarFichas();
     }
-
+    private ActionsManager getActionsManager() {
+        return actionsManager;
+    }
+    public void asignarJalador(JaladorHaciaAtras jalador){
+        actionsManager.setJalador(jalador);
+    }
 
 
     public void jalarHaciaAtras(){
