@@ -3,8 +3,8 @@ package edu.upb.lp.progra.ClashOfHeroes;
 public class Ficha {
     private int vida = 10;
     private String name; //demon_rojo demon_morado demon_plomo
-    private boolean preparandoAtaque = false;
-   private int turnosParaAtacar = 0;
+    private boolean cargando = false;
+    private int turnosParaAtacar = 0;
 
     public Ficha(String name){
         this.name = name;
@@ -17,15 +17,20 @@ public class Ficha {
     public void setName(String name){
         this.name=name;
     }
-    public void setPreparandoAtaque(boolean preparandoAtaque){
-        this.preparandoAtaque=preparandoAtaque;
+    public void setCargando(boolean cargando){
+        this.cargando = cargando;
     }
     public void setTurnosParaAtacar(int turnosParaAtacar){
         this.turnosParaAtacar=turnosParaAtacar;
     }
     public void finTurno(){
-        if(preparandoAtaque)
+        if(cargando)
             vida+=2;
+    }
+    // get conseguir -> getter consigue el atributo
+    // set colocar -> setter coloca un valor al atributo
+    public boolean getCargando(){
+        return this.cargando;
     }
 
 }

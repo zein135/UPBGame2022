@@ -25,6 +25,7 @@ public class ClashOfHeroes {
         Ficha[][] tableroJugador2=initPlayerBoard(jugador2);
         actualizarTableroJugador(tableroJugador1);
         actualizarTableroEnemigo(tableroJugador2);
+        ui.dibujarBoton("Jalar");
         draw();
     }
     public Ficha[][] initPlayerBoard(Player jugador){
@@ -111,6 +112,7 @@ public class ClashOfHeroes {
                 turnoJugador1=true;
                 jugador1.setMovimientos(3);
                 ui.mensajeTemporal("Turno de Jugador 1");
+                jugador1.verFichasCargadas();
             }
         }
     }
@@ -157,6 +159,11 @@ public class ClashOfHeroes {
         ui.removerBoton("Eliminar");
         siCambiaTurnoJugador();
     }
-
+    public void jalarHaciaAtras(){
+        Player jugadorActual=obtenerJugadorActual();
+        jugadorActual.jalarHaciaAtras();
+        actualizarTableroJugador(jugadorActual.getTablero());
+        draw();
+    }
 }
 

@@ -3,6 +3,8 @@ package edu.upb.lp.progra.ClashOfHeroes;
 public class ActionsManager {
     private Ficha fichaSelec;
     private Ficha[][] tablero;
+    private int verticalFichaSelec;
+    private int horizontalFichaSelec;
     //va a hacer las acciones
     // Cuando seleccionamos una celda 1 boton "Eliminar", si lo presionamos
     // se elimina la unidad y las unidades detras avanzan una casilla
@@ -25,7 +27,8 @@ public class ActionsManager {
         return fila;
     }
     public boolean igual(Ficha ficha1,Ficha ficha2){
-        return ficha1.getName()==ficha2.getName();
+        //if(ficha1.PreparandoAtaque() || ficha2.isPreparandoAtaque()) return false;
+        return ficha1.getName().equals(ficha2.getName());
     }
     public boolean verficarHorizontal(int fila,int col){
         for(int i=fila;i<fila+3;i++){
@@ -39,7 +42,6 @@ public class ActionsManager {
                 /*if(tablero[fila][col]==tablero[fila][col+1] && tablero[fila][col]==tablero[fila][col+2]){
 
                 }else{*/
-                System.out.println();
                     if(fila+2<tablero.length && verficarHorizontal(fila,col)){
                         formacionAtaque(fila,col);
                     }
@@ -52,7 +54,7 @@ public class ActionsManager {
         Ficha[] formacion  = new Ficha[3];
         for(int i=0;i<3;i++){
             formacion[i]=tablero[fila+i][col];
-            tablero[fila+i][col].setPreparandoAtaque(true);
+            tablero[fila+i][col].setCargando(true);
             tablero[fila+i][col].setTurnosParaAtacar(2);
             tablero[fila+i][col].setName(tablero[fila+i][col].getName()+"_charging");
         }
@@ -73,6 +75,8 @@ public class ActionsManager {
         int nullId=primeraCasillaVacia(vertical);
         nullId--;
         fichaSelec=tablero[nullId][vertical];
+        horizontalFichaSelec=nullId;
+        verticalFichaSelec=vertical;
         eliminar(nullId,vertical);
     }
 
@@ -80,6 +84,17 @@ public class ActionsManager {
         int fila=primeraCasillaVacia(vertical);
         tablero[fila][vertical]=fichaSelec;
         verificarTablero();
+    }
+    public void jalarHaciaAtras(){
+        if(horizontalFichaSelec<tablero.length) {
+            tablero[horizontalFichaSelec][verticalFichaSelec] = null;
+            horizontalFichaSelec++;
+            if (horizontalFichaSelec < tablero.length)
+                tablero[horizontalFichaSelec][verticalFichaSelec] = fichaSelec;
+            else {
+                //TODO La ficha se fue tablero
+            }
+        }
     }
 }
 

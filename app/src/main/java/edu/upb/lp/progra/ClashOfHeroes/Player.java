@@ -29,6 +29,9 @@ public class Player {
     public int[] getNumUnits(){
         return numUnits;
     }
+    public void setMovimientos(int movimientos){
+        this.movimientos=movimientos;
+    }
     public void initBoard(){
         for(int i=0;i<numUnits.length;i++){
             numUnits[i]=0;
@@ -75,8 +78,24 @@ public class Player {
     public boolean tengoTurnos(){
         return movimientos!=0;
     }
-    public void setMovimientos(int movimientos){
-        this.movimientos=movimientos;
+
+    public void verFichasCargadas(){
+       // for( declaracion de variable ; condicion ; instruccion)
+        for(int fila=0; fila< tablero.length;fila++ ){
+            for(int col=0;col< tablero.length;col++){
+               if(tablero[fila][col]!= null && tablero[fila][col].getCargando()){
+                   
+               }
+            }
+
+        }
     }
 
+
+
+    public void jalarHaciaAtras(){
+        actionsManager.jalarHaciaAtras();
+    }
 }
+
+
