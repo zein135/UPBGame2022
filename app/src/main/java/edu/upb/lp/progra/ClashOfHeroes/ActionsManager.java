@@ -36,25 +36,50 @@ public class ActionsManager {
         //if(ficha1.PreparandoAtaque() || ficha2.isPreparandoAtaque()) return false;
         return ficha1.getName().equals(ficha2.getName());
     }
-    public boolean verficarVertical(int fila, int col){
+    public boolean verificarAtaque(int fila, int col){
         for(int i=fila;i<fila+3;i++){
-            if(tablero[i][col]==null || tablero[i][col].getCargando()) return false;
+            if(tablero[i][col]==null || tablero[i][col].getCargando() || tablero[i][col].siSoyMuro()) return false;
         }
         return igual(tablero[fila][col],tablero[fila+1][col]) && igual(tablero[fila][col],tablero[fila+2][col]);
     }
+    private boolean verificarMuro(int fila, int col) {
+        for(int i=col;i<col+3;i++){
+            if(tablero[fila][i]==null || tablero[fila][i].getCargando() || tablero[fila][i].siSoyMuro()) return false;
+        }
+        return igual(tablero[fila][col],tablero[fila][col+1]) && igual(tablero[fila][col],tablero[fila][col+2]);
+    }
+
     public void verificarTablero(){
         for(int fila=0; fila<tablero.length; fila++){
             for(int col=0;col<tablero[fila].length;col++){
-                /*if(tablero[fila][col]==tablero[fila][col+1] && tablero[fila][col]==tablero[fila][col+2]){
-
-                }else{*/
-                    if(fila+2<tablero.length && verficarVertical(fila,col)){
+                if(col+2<tablero[fila].length && verificarMuro(fila,col)){
+                    formacionMuro(fila,col);
+                }else{
+                    if(fila+2<tablero.length && verificarAtaque(fila,col)){
                         formacionAtaque(fila,col);
                     }
-               //}
+               }
             }
         }
     }
+    public void formacionMuro(int fila,int col){
+        for(int i=fila-1;i>=0;i--){
+            for(int j=col;j<col+3;j++){
+                tablero[i+1][j]=tablero[i][j];
+            }
+        }
+        for(int i=0;i<3;i++){
+            tablero[0][col+i]=crearMuro();
+        }
+    }
+
+    private Ficha crearMuro() {
+        Ficha muro=new Ficha("demon_muro");
+        muro.setVida(20);
+        muro.ahoraSoyMuro();
+        return muro;
+    }
+
     // formacionAtaque recibe las coordenadas de la cabeza de la formacion
     private void formacionAtaque(int fila, int col) {
         Ficha[] formacion  = new Ficha[3];
@@ -103,18 +128,19 @@ public class ActionsManager {
         }
     }
     public void meAtacan(int col, int ataqueEnemigo) {
-        for(int fila=0; fila<tablero.length;fila++){
+        for(int fila=0; fila<tablero.length && ataqueEnemigo!=0 ;fila++){
             // if(condicion)
             if (tablero[fila][col]!=null && tablero[fila][col].getVida()<=ataqueEnemigo){
                 ataqueEnemigo-=tablero[fila][col].getVida();
                 //eliminar(fila,col);
                 tablero[fila][col]=null;
-            } /*else {
+            } else {
                 if(tablero[fila][col]!=null){
+                    tablero[fila][col].setName("demon_muro_rajado");
                     tablero[fila][col].setVida(tablero[fila][col].getVida()-ataqueEnemigo);
                     ataqueEnemigo=0;
                 }
-            }*/
+            }
         }
         jugador.setVida(jugador.getVida()-ataqueEnemigo);
     }

@@ -24,6 +24,9 @@ public class ClashOfHeroes {
         Player jugadorActual=obtenerJugadorActual();
         ui.eliminarMensaje("movimientos");
         ui.mostrarMensaje("movimientos","Movimientos: "+jugadorActual.getMovimientos());
+        ui.eliminarMensaje("tropas");
+        int reserva=MAX_UNITS-jugadorActual.obtenerNumeroFichas();
+        ui.mostrarMensaje("tropas","Reserva: "+reserva);
     }
     public void initGame(){
         for(int i=0;i<13;i++){
@@ -43,7 +46,7 @@ public class ClashOfHeroes {
     }
     public Ficha[][] initPlayerBoard(Player jugador){
         jugador.initBoard();
-        Ficha[][] tableroJugador=jugador.LlenarTablero(MAX_UNITS);
+        Ficha[][] tableroJugador=jugador.llenarTablero(MAX_UNITS);
         //actualizarTableroJugador(tableroJugador);
         jugador.setMovimientos(3);
         return tableroJugador;
@@ -129,6 +132,9 @@ public class ClashOfHeroes {
             turnoJugador1=!turnoJugador1;
             jugadorEnemigo.setMovimientos(3);
             jugadorEnemigo.verFichasCargadas();
+            if(jugadorEnemigo.obtenerNumeroFichas()<MAX_UNITS){
+                ui.dibujarBoton("Llamar");
+            }
             actualizarTableroJugador(jugador1.getTablero());
             actualizarTableroEnemigo(jugador2.getTablero());
         }
@@ -186,6 +192,9 @@ public class ClashOfHeroes {
             actualizarTableroEnemigo(jugadorActual.getTablero());
         draw();
         siCambiaTurnoJugador();
+        if(jugadorActual.obtenerNumeroFichas()<MAX_UNITS){
+            ui.dibujarBoton("Llamar");
+        }
         quitarbotones();
     }
     public void jalarHaciaAtras(){
@@ -197,5 +206,18 @@ public class ClashOfHeroes {
     public void executeLater(Runnable r, int ms){
         ui.executeLater(r,ms);
     }
+
+    public void llamar() {
+        Player jugadorActual=obtenerJugadorActual();
+        ui.removerBoton("Llamar");
+        jugadorActual.llenarTablero(MAX_UNITS-jugadorActual.obtenerNumeroFichas());
+        dibujarVidasYMovimientos();
+        if(turnoJugador1)
+            actualizarTableroJugador(jugadorActual.getTablero());
+        else
+            actualizarTableroEnemigo(jugadorActual.getTablero());
+        draw();
+    }
 }
 
+// TODO para avanzr con los ataques no debe contar con los muros

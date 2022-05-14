@@ -32,6 +32,8 @@ public class ClashOfHeroesUI implements UI {
             game.enviar();
         if(name.equals("Jalar"))
             game.jalarHaciaAtras();
+        if(name.equals("Llamar"))
+            game.llamar();
     }
 
     @Override

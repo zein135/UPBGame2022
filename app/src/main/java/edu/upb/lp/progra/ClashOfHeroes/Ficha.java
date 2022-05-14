@@ -48,5 +48,6 @@ public class Ficha {
     public boolean siSoyMuro(){
         return soyMuro;
     }
+    //public Ficha copiaDe(Ficha ficha)
 }
 

@@ -11,6 +11,14 @@ public class Player {
     private boolean guardeFicha=false;
     private int vida=50;
 
+    public int obtenerNumeroFichas(){
+        int totalFichas=0;
+        for(int i = 0; i< numUnits.length; i++){
+            totalFichas+=numUnits[i];
+        }
+        return totalFichas;
+    }
+
     public int getVida(){
         return vida;
     }
@@ -60,8 +68,8 @@ public class Player {
                 tablero[row][col]=null;
         }
     }
-    public Ficha[][] LlenarTablero (int unidades){
-        String[] colors = new String[]{"demon_red", "demon_purple", "demon_grey"};
+    public Ficha[][] llenarTablero(int unidades){
+        String[] colors = new String[]{"demon_red", "imp_purple", "dog_grey"};
         int idColor=0;
         int units=unidades;
         int columna=0;
@@ -129,6 +137,7 @@ public class Player {
     public int getMovimientos() {
         return movimientos;
     }
+
 }
 
 
