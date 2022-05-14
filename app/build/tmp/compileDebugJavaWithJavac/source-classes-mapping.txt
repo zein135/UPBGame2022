@@ -27,13 +27,13 @@ edu/upb/lp/progra/ClashOfHeroes/Enemy.java
  edu.upb.lp.progra.ClashOfHeroes.Enemy
 edu/upb/lp/progra/ClashOfHeroes/Ficha.java
  edu.upb.lp.progra.ClashOfHeroes.Ficha
-edu/upb/lp/progra/ClashOfHeroes/ClashOfHeroesUI.java
- edu.upb.lp.progra.ClashOfHeroes.ClashOfHeroesUI
-edu/upb/lp/progra/ClashOfHeroes/JaladorHaciaAtras.java
- edu.upb.lp.progra.ClashOfHeroes.JaladorHaciaAtras
-edu/upb/lp/progra/ClashOfHeroes/ClashOfHeroes.java
- edu.upb.lp.progra.ClashOfHeroes.ClashOfHeroes
 edu/upb/lp/progra/ClashOfHeroes/Player.java
  edu.upb.lp.progra.ClashOfHeroes.Player
+edu/upb/lp/progra/ClashOfHeroes/ClashOfHeroesUI.java
+ edu.upb.lp.progra.ClashOfHeroes.ClashOfHeroesUI
+edu/upb/lp/progra/ClashOfHeroes/ClashOfHeroes.java
+ edu.upb.lp.progra.ClashOfHeroes.ClashOfHeroes
 edu/upb/lp/progra/ClashOfHeroes/ActionsManager.java
  edu.upb.lp.progra.ClashOfHeroes.ActionsManager
+edu/upb/lp/progra/ClashOfHeroes/JaladorHaciaAtras.java
+ edu.upb.lp.progra.ClashOfHeroes.JaladorHaciaAtras

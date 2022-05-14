@@ -16,6 +16,15 @@ public class ClashOfHeroes {
         int random=(int)Math.floor(Math.random()*(max-min+1)+min);
         return random;
     }
+    public void dibujarVidasYMovimientos(){
+        ui.eliminarMensaje("vidaJugador1");
+        ui.mostrarMensaje("vidaJugador1","Vida Jugador 1: "+jugador1.getVida());
+        ui.eliminarMensaje("vidaJugador2");
+        ui.mostrarMensaje("vidaJugador2","Vida Jugador 2: "+jugador2.getVida());
+        Player jugadorActual=obtenerJugadorActual();
+        ui.eliminarMensaje("movimientos");
+        ui.mostrarMensaje("movimientos","Movimientos: "+jugadorActual.getMovimientos());
+    }
     public void initGame(){
         for(int i=0;i<13;i++){
             for(int j=0;j<8;j++){
@@ -29,7 +38,7 @@ public class ClashOfHeroes {
         Ficha[][] tableroJugador2=initPlayerBoard(jugador2);
         actualizarTableroJugador(tableroJugador1);
         actualizarTableroEnemigo(tableroJugador2);
-        ui.dibujarBoton("Jalar");
+        dibujarVidasYMovimientos();
         draw();
     }
     public Ficha[][] initPlayerBoard(Player jugador){
@@ -48,12 +57,12 @@ public class ClashOfHeroes {
         }
     }
     private void actualizarTableroEnemigo(Ficha[][] tableroEnemigo){
-        int rowBoard=5;
+        //int rowBoard=5;
         for(int row=0;row<6;row++){
             for(int col=0;col<8;col++){
-                board[rowBoard][col]=tableroEnemigo[row][col];
+                board[5-row][col]=tableroEnemigo[row][col];
             }
-            rowBoard--;
+            //rowBoard--;
         }
     }
     public void draw(){
@@ -69,31 +78,32 @@ public class ClashOfHeroes {
         }
     }
     public void click(int horizontal,int vertical){
+        Player jugadorActual=obtenerJugadorActual();
         boolean seSelecciono=false;
-        draw();
         if(turnoJugador1){
             if(horizontal>=7 && horizontal<=12){
                 jugador1.setUltimoVertical(vertical);
                 jugador1.setUltimoHorizontal(horizontal-7);
-                seSelecciono=(board[horizontal][vertical]!=null);
+                seSelecciono=true;
             }
         } else{
             if(horizontal<=5){
                 jugador2.setUltimoHorizontal(5-horizontal);
-                jugador2.setUltimoVertical(7-vertical);
-                seSelecciono=(board[horizontal][vertical]!=null);
+                jugador2.setUltimoVertical(vertical);
+                seSelecciono=true;
             }
         }
-        if(seSelecciono){
-            if(board[horizontal][vertical]!=null){
+        if(seSelecciono) {
+            if (board[horizontal][vertical] != null) {
                 //ui.drawUnit(horizontal,vertical,"colors_blue");//board[horizontal][vertical].getName()+"_selected");
-                ui.dibujarBoton("Eliminar");
-                ui.dibujarBoton("Mover");
+                if(!jugadorActual.getGuardeFicha()) {
+                    ui.dibujarBoton("Eliminar");
+                    if (!board[horizontal][vertical].siSoyMuro()) {
+                        ui.dibujarBoton("Mover");
+                    }
+                }
             }
-            else{
-                ui.removerBoton("Eliminar");
-                ui.removerBoton("Mover");
-            }
+            draw();
         }
     }
     public Player obtenerJugadorActual(){
@@ -102,52 +112,49 @@ public class ClashOfHeroes {
         else jugadorActual=jugador2;
         return jugadorActual;
     }
+    public Player obtenerJugadorEnemigo(){
+        Player jugadorEnemigo;
+        if(turnoJugador1) jugadorEnemigo=jugador2;
+        else jugadorEnemigo=jugador1;
+        return jugadorEnemigo;
+    }
     public void siCambiaTurnoJugador(){
-        /*
-           Player jugadorActual -> jugador1 -> jugador2
-           Player contrincante  -> jugador2 -> jugador1
-           coordenadas para el jugador2 arreglar la fila
-           jalarhaciaatras jalarhaciaadelante
-
-        */
-        if(turnoJugador1){
-            if(!jugador1.tengoTurnos()){
-                turnoJugador1=false;
-                //TODO empieza turno del jugador
-                jugador2.setMovimientos(3);
+        Player jugadorActual=obtenerJugadorActual();
+        Player jugadorEnemigo=obtenerJugadorEnemigo();
+        if(!jugadorActual.tengoTurnos()){
+            if(turnoJugador1)
                 ui.mensajeTemporal("Turno de Jugador 2");
-            }
-        }
-        else{
-            if(!jugador2.tengoTurnos()){
-                turnoJugador1=true;
-                jugador1.setMovimientos(3);
+            else
                 ui.mensajeTemporal("Turno de Jugador 1");
-                jugador1.verFichasCargadas();
-                actualizarTableroEnemigo(jugador2.getTablero());
-                actualizarTableroJugador(jugador1.getTablero());
-            }
+            turnoJugador1=!turnoJugador1;
+            jugadorEnemigo.setMovimientos(3);
+            jugadorEnemigo.verFichasCargadas();
+            actualizarTableroJugador(jugador1.getTablero());
+            actualizarTableroEnemigo(jugador2.getTablero());
         }
+        dibujarVidasYMovimientos();
         draw();
     }
     public void mover(){
+        Player jugadorActual=obtenerJugadorActual();
+        jugadorActual.setGuardeFicha(true);
+        jugadorActual.mover();
         if(turnoJugador1){
-            jugador1.mover();
+            jalador.start();
             actualizarTableroJugador(jugador1.getTablero());
         }
         else{
-            jugador2.mover();
             actualizarTableroEnemigo(jugador2.getTablero());
         }
         draw();
-        ui.removerBoton("Mover");
-        jalador.start();
+        quitarbotones();
         ui.dibujarBoton("Enviar");
     }
 
     public void enviar(){
         Player jugadorActual = obtenerJugadorActual();
         if(jugadorActual.getNumUnits()[jugadorActual.getUltimoVertical()]<6) {
+            jugadorActual.setGuardeFicha(false);
             jugadorActual.enviar();
             //actionsManager.enviar(jugador.getTablero(),jugador.getUltimoVertical());
             if(turnoJugador1)
@@ -161,6 +168,13 @@ public class ClashOfHeroes {
         else{
             ui.mensajeTemporal("Te saliste del tablero xD");
         }
+        quitarbotones();
+    }
+
+    private void quitarbotones() {
+        ui.removerBoton("Enviar");
+        ui.removerBoton("Mover");
+        ui.removerBoton("Eliminar");
     }
 
     public void eliminar() {
@@ -171,8 +185,8 @@ public class ClashOfHeroes {
         else
             actualizarTableroEnemigo(jugadorActual.getTablero());
         draw();
-        ui.removerBoton("Eliminar");
         siCambiaTurnoJugador();
+        quitarbotones();
     }
     public void jalarHaciaAtras(){
         Player jugadorActual=obtenerJugadorActual();

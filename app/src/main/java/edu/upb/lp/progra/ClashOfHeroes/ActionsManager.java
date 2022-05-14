@@ -6,11 +6,13 @@ public class ActionsManager {
     private int verticalFichaSelec;
     private int horizontalFichaSelec;
     private JaladorHaciaAtras jalador;
+    private Player jugador;
     //va a hacer las acciones
     // Cuando seleccionamos una celda 1 boton "Eliminar", si lo presionamos
     // se elimina la unidad y las unidades detras avanzan una casilla
-    public ActionsManager(Ficha[][] tablero){
-        this.tablero=tablero;
+    public ActionsManager(Player jugador){
+        this.jugador=jugador;
+        this.tablero=jugador.getTablero();
     }
     public void setJalador(JaladorHaciaAtras jalador){
         this.jalador=jalador;
@@ -34,7 +36,7 @@ public class ActionsManager {
         //if(ficha1.PreparandoAtaque() || ficha2.isPreparandoAtaque()) return false;
         return ficha1.getName().equals(ficha2.getName());
     }
-    public boolean verficarHorizontal(int fila,int col){
+    public boolean verficarVertical(int fila, int col){
         for(int i=fila;i<fila+3;i++){
             if(tablero[i][col]==null || tablero[i][col].getCargando()) return false;
         }
@@ -46,7 +48,7 @@ public class ActionsManager {
                 /*if(tablero[fila][col]==tablero[fila][col+1] && tablero[fila][col]==tablero[fila][col+2]){
 
                 }else{*/
-                    if(fila+2<tablero.length && verficarHorizontal(fila,col)){
+                    if(fila+2<tablero.length && verficarVertical(fila,col)){
                         formacionAtaque(fila,col);
                     }
                //}
@@ -114,7 +116,7 @@ public class ActionsManager {
                 }
             }*/
         }
-
+        jugador.setVida(jugador.getVida()-ataqueEnemigo);
     }
     public void avanzarFichas(){
         for(int fila=1;fila<tablero.length;fila++){

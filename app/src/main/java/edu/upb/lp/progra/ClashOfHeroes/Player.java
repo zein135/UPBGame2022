@@ -5,12 +5,26 @@ public class Player {
     private int[] numUnits = new int[8];
     private int ultimoHorizontal;
     private int ultimoVertical;
-    private ActionsManager actionsManager=new ActionsManager(tablero);
-    public int movimientos=0;
+    private ActionsManager actionsManager=new ActionsManager(this);
+    private int movimientos=0;
     private Player enemigo;
+    private boolean guardeFicha=false;
+    private int vida=50;
 
+    public int getVida(){
+        return vida;
+    }
+    public void setVida(int vida){
+        this.vida=vida;
+    }
     public void setUltimoVertical(int vertical){
         ultimoVertical = vertical;
+    }
+    public void setGuardeFicha(boolean guardeFicha){
+        this.guardeFicha=guardeFicha;
+    }
+    public boolean getGuardeFicha(){
+        return guardeFicha;
     }
     public void setUltimoHorizontal(int horizontal){
         ultimoHorizontal = horizontal;
@@ -110,6 +124,10 @@ public class Player {
 
     public void jalarHaciaAtras(){
         actionsManager.jalarHaciaAtras();
+    }
+
+    public int getMovimientos() {
+        return movimientos;
     }
 }
 

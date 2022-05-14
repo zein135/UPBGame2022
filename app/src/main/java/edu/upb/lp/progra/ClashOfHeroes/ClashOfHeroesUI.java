@@ -64,4 +64,13 @@ public class ClashOfHeroesUI implements UI {
     public void executeLater(Runnable r, int ms) {
        gui.executeLater(r,ms);
     }
+    public void eliminarMensaje(String name){
+        gui.removeTextField(name);
+    }
+    public void eliminarTodosLosMensaje(){
+        gui.removeAllTextFields();
+    }
+    public void mostrarMensaje(String name,String mensaje){
+        gui.addTextField(name,mensaje,15,20);
+    }
 }

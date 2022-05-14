@@ -6,6 +6,7 @@ public class Ficha {
     private String name; //demon_rojo demon_morado demon_plomo
     private boolean cargando = false;
     private int turnosParaAtacar = 0;
+    private boolean soyMuro=false;
 
     public Ficha(String name){
         this.name = name;
@@ -34,13 +35,18 @@ public class Ficha {
     public int getVida() {
         return vida;
     }
-
     public int getAtaque() {
         return ataque;
     }
 
     public void setVida(int vida) {
         this.vida=vida;
+    }
+    public void ahoraSoyMuro(){
+        soyMuro=true;
+    }
+    public boolean siSoyMuro(){
+        return soyMuro;
     }
 }
 
