@@ -115,8 +115,9 @@ public class ClashOfHeroes {
             }
         }
         if(seSelecciono) {
+            draw();
             if (board[horizontal][vertical] != null) {
-                //ui.drawUnit(horizontal,vertical,"colors_blue");//board[horizontal][vertical].getName()+"_selected");
+                ui.drawUnit(horizontal,vertical,board[horizontal][vertical].getName()+"_selected");
                 if(!jugadorActual.getGuardeFicha()) {
                     ui.dibujarBoton("Eliminar");
                     if (!board[horizontal][vertical].siSoyMuro()) {
@@ -124,7 +125,6 @@ public class ClashOfHeroes {
                     }
                 }
             }
-            draw();
         }
         if(board[horizontal][vertical]==null){
             ui.removerBoton("Mover");
