@@ -1,55 +1,23 @@
 [
     {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_imp_purple.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\imp_purple.png"
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_demon_red_running_1.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\demon_red_running_1.jpg"
     },
     {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_demon_purple.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\demon_purple.png"
-    },
-    {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dog_grey_charging.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\dog_grey_charging.png"
-    },
-    {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_clash_of_hereos_fondo_desierto.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\clash_of_hereos_fondo_desierto.png"
-    },
-    {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_clash_of_heroes_fondo_desierto3.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\clash_of_heroes_fondo_desierto3.png"
-    },
-    {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_demon_red_attacking_1.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\demon_red_attacking_1.png"
-    },
-    {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_imp_purple_charging.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\imp_purple_charging.png"
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_imp_purple_running_1.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\imp_purple_running_1.jpg"
     },
     {
         "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_clash_of_heroes_fondo_desierto1.png.flat",
         "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\clash_of_heroes_fondo_desierto1.png"
     },
     {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_demon_red_running_2.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\demon_red_running_2.png"
-    },
-    {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dog_grey.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\dog_grey.png"
-    },
-    {
         "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bugs_happy_bug_selected.jpg.flat",
         "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\bugs_happy_bug_selected.jpg"
     },
     {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bugs_sad_bug.jpg.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\bugs_sad_bug.jpg"
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dog_grey_attacking_3.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\dog_grey_attacking_3.jpg"
     },
     {
         "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bugs_sad_bug_selected.jpg.flat",
@@ -60,24 +28,8 @@
         "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\clash_of_heroes_fondo_desierto5.png"
     },
     {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_colors_blue.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\colors_blue.png"
-    },
-    {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_colors_white.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\colors_white.png"
-    },
-    {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bugs_dead_bug.png.flat",
         "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\bugs_dead_bug.png"
-    },
-    {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_clash_of_heroes_fondo_desierto4.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\clash_of_heroes_fondo_desierto4.png"
     },
     {
         "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\raw_ping.mp3.flat",
@@ -88,16 +40,112 @@
         "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_demon_red.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\demon_red.png"
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_clash_of_heroes_fondo_desierto6.png.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\clash_of_heroes_fondo_desierto6.png"
     },
     {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bugs_happy_bug.jpg.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\bugs_happy_bug.jpg"
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_clash_of_heroes_fondo_desierto2.png.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\clash_of_heroes_fondo_desierto2.png"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_demon_red_charging.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\demon_red_charging.jpg"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_demon_red_running_2.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\demon_red_running_2.jpg"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_demon_red_attacking_2.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\demon_red_attacking_2.jpg"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_imp_purple_attacking_1.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\imp_purple_attacking_1.jpg"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_imp_purple.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\imp_purple.jpg"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dog_grey_running_2.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\dog_grey_running_2.jpg"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_clash_of_heroes_fondo_cafe.png.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\clash_of_heroes_fondo_cafe.png"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_demon_muro_trans_1.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\demon_muro_trans_1.jpg"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dog_grey_running_1.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\dog_grey_running_1.jpg"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_demon_muro_rajado.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\demon_muro_rajado.jpg"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_clash_of_heroes_fondo_desierto3.png.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\clash_of_heroes_fondo_desierto3.png"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_clash_of_hereos_fondo_desierto.png.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\clash_of_hereos_fondo_desierto.png"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_demon_muro.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\demon_muro.jpg"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dog_grey.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\dog_grey.jpg"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_imp_purple_attacking_2_1.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\imp_purple_attacking_2_1.jpg"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bugs_sad_bug.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\bugs_sad_bug.jpg"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dog_grey_attacking_1.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\dog_grey_attacking_1.jpg"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_colors_blue.png.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\colors_blue.png"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_colors_white.png.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\colors_white.png"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_imp_purple_attacking_2.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\imp_purple_attacking_2.jpg"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher.png.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_clash_of_heroes_fondo_desierto4.png.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\clash_of_heroes_fondo_desierto4.png"
     },
     {
         "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
         "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bugs_happy_bug.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\bugs_happy_bug.jpg"
     },
     {
         "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bugs_old_bug_selected.jpg.flat",
@@ -112,28 +160,16 @@
         "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\bugs_hungry_bug_selected.jpg"
     },
     {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_clash_of_heroes_fondo_desierto6.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\clash_of_heroes_fondo_desierto6.png"
-    },
-    {
         "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bugs_old_bug.jpg.flat",
         "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\bugs_old_bug.jpg"
     },
     {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_clash_of_heroes_fondo_desierto2.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\clash_of_heroes_fondo_desierto2.png"
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_imp_purple_charging.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\imp_purple_charging.jpg"
     },
     {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_demon_muro.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\demon_muro.png"
-    },
-    {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_demon_red_charging.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\demon_red_charging.png"
-    },
-    {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_demon_red_attacking_2.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\demon_red_attacking_2.png"
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_imp_purple_running_2.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\imp_purple_running_2.jpg"
     },
     {
         "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_colors_grey.png.flat",
@@ -144,27 +180,35 @@
         "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\bugs_dead_bug_selected.png"
     },
     {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_demon_red_attacking_1.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\demon_red_attacking_1.jpg"
+    },
+    {
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dog_grey_attacking_2.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\dog_grey_attacking_2.jpg"
+    },
+    {
         "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_clash_of_heroes_fondo_desierto.png.flat",
         "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\clash_of_heroes_fondo_desierto.png"
     },
     {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_demon_grey.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\demon_grey.png"
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_demon_red.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\demon_red.jpg"
     },
     {
         "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher.png.flat",
         "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_demon_red_running_1.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\demon_red_running_1.png"
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dog_grey_charging.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\dog_grey_charging.jpg"
     },
     {
         "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bugs_hungry_bug.jpeg.flat",
         "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\bugs_hungry_bug.jpeg"
     },
     {
-        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_clash_of_heroes_fondo_cafe.png.flat",
-        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\clash_of_heroes_fondo_cafe.png"
+        "merged": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\build\\intermediates\\res\\merged\\debug\\drawable_demon_muro_trans_2.jpg.flat",
+        "source": "C:\\UPB\\Programacion I\\UPBGame2021\\app\\src\\main\\res\\drawable\\demon_muro_trans_2.jpg"
     }
 ]

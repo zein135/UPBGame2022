@@ -131,7 +131,7 @@ public class Animador {
             else {
                 if(mostrarMuroRajado) {
                     mostrarMuroRajado=false;
-                    ui.drawUnit(meAtacanHorizontal - 1, colFichasEnMovimiento[idFichaEnMovimiento], "muro_rajado");
+                    ui.drawUnit(meAtacanHorizontal - 1, colFichasEnMovimiento[idFichaEnMovimiento], "demon_muro_rajado");
                 }
                 else
                     ui.drawUnit(meAtacanHorizontal-1,colFichasEnMovimiento[idFichaEnMovimiento],"clash_of_heroes_fondo_desierto");
