@@ -3,15 +3,19 @@ package edu.upb.lp.progra.ClashOfHeroes;
 public class Ficha {
     private int vida = 10;
     private int ataque = 10;
+    private String tipo;
     private String name; //demon_rojo demon_morado demon_plomo
     private boolean cargando = false;
     private int turnosParaAtacar = 0;
     private boolean soyMuro=false;
 
-    public Ficha(String name){
+    public Ficha(String name,String tipo){
         this.name = name;
+        this.tipo=tipo;
     }
-
+    public String getTipo(){
+        return tipo;
+    }
     // getter del name:
     public String getName(){
         return name;

@@ -27,7 +27,11 @@ int drawable demon_grey 0x7f020017
 int drawable demon_muro 0x7f02001c
 int drawable demon_purple 0x7f020018
 int drawable demon_red 0x7f020019
+int drawable demon_red_attacking_1 0x7f020021
+int drawable demon_red_attacking_2 0x7f020022
 int drawable demon_red_charging 0x7f02001b
+int drawable demon_red_running_1 0x7f020023
+int drawable demon_red_running_2 0x7f020024
 int drawable dog_grey 0x7f02001d
 int drawable dog_grey_charging 0x7f02001e
 int drawable ic_launcher 0x7f02001a

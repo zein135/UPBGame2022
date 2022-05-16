@@ -5,7 +5,7 @@ public class Player {
     private int[] numUnits = new int[8];
     private int ultimoHorizontal;
     private int ultimoVertical;
-    private ActionsManager actionsManager=new ActionsManager(this);
+    private ActionsManager actionsManager;
     private int movimientos=0;
     private Player enemigo;
     private boolean guardeFicha=false;
@@ -18,7 +18,9 @@ public class Player {
         }
         return totalFichas;
     }
-
+    public void asignarActionsManagerYAnimador(Animador animador){
+        actionsManager=new ActionsManager(this,animador);
+    }
     public int getVida(){
         return vida;
     }
@@ -76,7 +78,7 @@ public class Player {
         while(units!=0){
             int colocarFicha=generateRandom(0,1);
             if(colocarFicha==1 && numUnits[columna]<6){
-                tablero[numUnits[columna]][columna]=new Ficha(colors[idColor]);
+                tablero[numUnits[columna]][columna]=new Ficha(colors[idColor],colors[idColor]);
                 idColor++;
                 idColor%=3;
                 numUnits[columna]++;
@@ -94,8 +96,8 @@ public class Player {
     }
     public void enviar(){
         numUnits[ultimoVertical]++;
-        actionsManager.enviar(ultimoVertical);
         movimientos--;
+        actionsManager.enviar(ultimoVertical);
     }
     public void eliminar(){
         numUnits[ultimoVertical]--;
@@ -107,18 +109,19 @@ public class Player {
     }
 
     public void verFichasCargadas(){
-       // for( declaracion de variable ; condicion ; instruccion)
         ActionsManager actionsManagerEnemigo=enemigo.getActionsManager();
         for(int fila=0; fila< tablero.length;fila++ ){
             for(int col=0;col< tablero[fila].length;col++){
                if(tablero[fila][col]!=null && tablero[fila][col].getCargando()){
-                    actionsManagerEnemigo.meAtacan(col,tablero[fila][col].getAtaque());
+
+                    actionsManagerEnemigo.meAtacan(col,tablero[fila][col].getAtaque(),tablero[fila][col].getTipo());
                     tablero[fila][col]=null;
                     //actionsManager.eliminar(fila,col);
                     numUnits[col]--;
                }
             }
         }
+        actionsManagerEnemigo.animacionMeAtacan();
         actionsManagerEnemigo.avanzarFichas();
         actionsManager.avanzarFichas();
     }
@@ -133,7 +136,12 @@ public class Player {
     public void jalarHaciaAtras(){
         actionsManager.jalarHaciaAtras();
     }
-
+    public void asignarLanzador(Lanzador lanzador){
+        actionsManager.setLanzador(lanzador);
+    }
+    /*public void lanzar(){
+        actionsManager.lanzar();
+    }*/
     public int getMovimientos() {
         return movimientos;
     }

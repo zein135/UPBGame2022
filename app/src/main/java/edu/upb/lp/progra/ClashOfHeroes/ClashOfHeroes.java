@@ -7,10 +7,22 @@ public class ClashOfHeroes {
     private Player jugador1 = new Player();
     private Player jugador2 = new Player();
     private boolean turnoJugador1=true;
+    private Animador animador;
     private JaladorHaciaAtras jalador = new JaladorHaciaAtras(this);
+    //private Lanzador lanzador = new Lanzador(this);
     //private ActionsManager actionsManager=new ActionsManager();
+    private int animacionHorizontal;
+    private int animacionVertical;
+    private boolean animacionTurnoJugador1;
+    private String animacionNombre;
     public ClashOfHeroes(ClashOfHeroesUI ui){
         this.ui=ui;
+    }
+    public Ficha[][] getBoard(){
+        return board;
+    }
+    public ClashOfHeroesUI getUi(){
+        return ui;
     }
     public int generateRandom(int min,int max){
         int random=(int)Math.floor(Math.random()*(max-min+1)+min);
@@ -34,9 +46,15 @@ public class ClashOfHeroes {
                 board[i][j]=null;
             }
         }
+        animador = new Animador(this);
+        jugador1.asignarActionsManagerYAnimador(animador);
+        jugador2.asignarActionsManagerYAnimador(animador);
         jugador1.setEnemigo(jugador2);
         jugador2.setEnemigo(jugador1);
         jugador1.asignarJalador(jalador);
+        jugador2.asignarJalador(jalador);
+        //jugador1.asignarLanzador(lanzador);
+        //jugador2.asignarLanzador(lanzador);
         Ficha[][] tableroJugador1=initPlayerBoard(jugador1);
         Ficha[][] tableroJugador2=initPlayerBoard(jugador2);
         actualizarTableroJugador(tableroJugador1);
@@ -108,6 +126,10 @@ public class ClashOfHeroes {
             }
             draw();
         }
+        if(board[horizontal][vertical]==null){
+            ui.removerBoton("Mover");
+            ui.removerBoton("Eliminar");
+        }
     }
     public Player obtenerJugadorActual(){
         Player jugadorActual;
@@ -130,6 +152,8 @@ public class ClashOfHeroes {
             else
                 ui.mensajeTemporal("Turno de Jugador 1");
             turnoJugador1=!turnoJugador1;
+            animador.setAnimacionTurnoJugador1(turnoJugador1);
+            animador.iniciarId();
             jugadorEnemigo.setMovimientos(3);
             jugadorEnemigo.verFichasCargadas();
             if(jugadorEnemigo.obtenerNumeroFichas()<MAX_UNITS){
@@ -139,14 +163,15 @@ public class ClashOfHeroes {
             actualizarTableroEnemigo(jugador2.getTablero());
         }
         dibujarVidasYMovimientos();
-        draw();
+        //draw();
     }
     public void mover(){
         Player jugadorActual=obtenerJugadorActual();
         jugadorActual.setGuardeFicha(true);
+        animador.setAnimacionNombre(jugadorActual.getTablero()[jugadorActual.getUltimoHorizontal()][jugadorActual.getUltimoVertical()].getName());
         jugadorActual.mover();
+        jalador.start();
         if(turnoJugador1){
-            jalador.start();
             actualizarTableroJugador(jugador1.getTablero());
         }
         else{
@@ -157,24 +182,34 @@ public class ClashOfHeroes {
         ui.dibujarBoton("Enviar");
     }
 
-    public void enviar(){
+    public void enviar() {
         Player jugadorActual = obtenerJugadorActual();
         if(jugadorActual.getNumUnits()[jugadorActual.getUltimoVertical()]<6) {
-            jugadorActual.setGuardeFicha(false);
+            animador.setAnimacionVertical(jugadorActual.getUltimoVertical());
+            if(turnoJugador1)
+                animador.setAnimacionHorizontal(board.length-1);
+                //animacionHorizontal=board.length-1;
+            else
+                animador.setAnimacionHorizontal(0);
+                //animacionHorizontal=0;
+            animador.setAnimacionTurnoJugador1(turnoJugador1);
+            //animacionTurnoJugador1=turnoJugador1;
             jugadorActual.enviar();
-            //actionsManager.enviar(jugador.getTablero(),jugador.getUltimoVertical());
+            animador.lanzar();
+            //lanzador.start();
+            jugadorActual.setGuardeFicha(false);
             if(turnoJugador1)
                 actualizarTableroJugador(jugadorActual.getTablero());
             else
                 actualizarTableroEnemigo(jugadorActual.getTablero());
-            draw();
+           // draw();
             ui.removerBoton("Enviar");
             siCambiaTurnoJugador();
+            quitarbotones();
         }
         else{
             ui.mensajeTemporal("Te saliste del tablero xD");
         }
-        quitarbotones();
     }
 
     private void quitarbotones() {
@@ -200,9 +235,36 @@ public class ClashOfHeroes {
     public void jalarHaciaAtras(){
         Player jugadorActual=obtenerJugadorActual();
         jugadorActual.jalarHaciaAtras();
-        actualizarTableroJugador(jugadorActual.getTablero());
+        if(turnoJugador1)
+            actualizarTableroJugador(jugadorActual.getTablero());
+        else
+            actualizarTableroEnemigo(jugadorActual.getTablero());
         draw();
     }
+    /*public void lanzarJugador(){
+        System.out.println(animacionHorizontal);
+        if(animacionHorizontal+1<board.length)
+            ui.drawUnit(animacionHorizontal+1,animacionVertical,"clash_of_heroes_fondo_desierto");
+        ui.drawUnit(animacionHorizontal,animacionVertical,animacionNombre);
+        animacionHorizontal--;
+        if(animacionHorizontal<6 || board[animacionHorizontal-1][animacionVertical]!=null) {
+            lanzador.stop();
+        }
+    }
+    public void lanzarEnemigo(){
+        if(animacionHorizontal-1>=0)
+            ui.drawUnit(animacionHorizontal-1,animacionVertical,"clash_of_heroes_fondo_desierto");
+        ui.drawUnit(animacionHorizontal,animacionVertical,animacionNombre);
+        animacionHorizontal++;
+        if(animacionHorizontal>5 || board[animacionHorizontal+1][animacionVertical]!=null)
+            lanzador.stop();
+    }
+    public void lanzar(){
+        if(animacionTurnoJugador1)
+            lanzarJugador();
+        else
+            lanzarEnemigo();
+    }*/
     public void executeLater(Runnable r, int ms){
         ui.executeLater(r,ms);
     }
@@ -217,6 +279,11 @@ public class ClashOfHeroes {
         else
             actualizarTableroEnemigo(jugadorActual.getTablero());
         draw();
+    }
+
+    public void actualizarTablero() {
+        actualizarTableroJugador(jugador1.getTablero());
+        actualizarTableroEnemigo(jugador2.getTablero());
     }
 }
 

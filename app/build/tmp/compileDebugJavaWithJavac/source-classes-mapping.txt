@@ -1,15 +1,16 @@
 edu/upb/lp/progra/BugWorld/Cell.java
  edu.upb.lp.progra.BugWorld.Cell
+edu/upb/lp/progra/BugWorld/ScoreManager.java
+ edu.upb.lp.progra.BugWorld.ScoreManager
 edu/upb/lp/progra/BugWorld/BugWorld.java
  edu.upb.lp.progra.BugWorld.BugWorld
 edu/upb/lp/progra/ClashOfHeroes/ClashOfHeroesUI.java
  edu.upb.lp.progra.ClashOfHeroes.ClashOfHeroesUI
-edu/upb/lp/androidInternalFiles/MyTextView.java
- edu.upb.lp.androidInternalFiles.MyTextView
-edu/upb/lp/progra/adapterFiles/UI.java
- edu.upb.lp.progra.adapterFiles.UI
-edu/upb/lp/progra/BugWorld/Bug.java
- edu.upb.lp.progra.BugWorld.Bug
+edu/upb/lp/androidInternalFiles/AndroidGameActivity.java
+ edu.upb.lp.androidInternalFiles.AndroidGameActivity
+ edu.upb.lp.androidInternalFiles.AndroidGameActivity$1
+edu/upb/lp/progra/adapterFiles/GameAdapter.java
+ edu.upb.lp.progra.adapterFiles.GameAdapter
 edu/upb/lp/genericgame/BuildConfig.java
  edu.upb.lp.genericgame.BuildConfig
 edu/upb/lp/progra/BugWorld/BugWorldUI.java
@@ -18,22 +19,25 @@ edu/upb/lp/progra/adapterFiles/TextListener.java
  edu.upb.lp.progra.adapterFiles.TextListener
 edu/upb/lp/progra/adapterFiles/AndroidGameGUI.java
  edu.upb.lp.progra.adapterFiles.AndroidGameGUI
-edu/upb/lp/progra/BugWorld/ScoreManager.java
- edu.upb.lp.progra.BugWorld.ScoreManager
-edu/upb/lp/progra/ClashOfHeroes/Enemy.java
- edu.upb.lp.progra.ClashOfHeroes.Enemy
-edu/upb/lp/progra/ClashOfHeroes/Ficha.java
- edu.upb.lp.progra.ClashOfHeroes.Ficha
-edu/upb/lp/progra/adapterFiles/GameAdapter.java
- edu.upb.lp.progra.adapterFiles.GameAdapter
+edu/upb/lp/progra/BugWorld/Bug.java
+ edu.upb.lp.progra.BugWorld.Bug
+edu/upb/lp/androidInternalFiles/MyTextView.java
+ edu.upb.lp.androidInternalFiles.MyTextView
+edu/upb/lp/progra/adapterFiles/UI.java
+ edu.upb.lp.progra.adapterFiles.UI
 edu/upb/lp/progra/ClashOfHeroes/JaladorHaciaAtras.java
  edu.upb.lp.progra.ClashOfHeroes.JaladorHaciaAtras
-edu/upb/lp/androidInternalFiles/AndroidGameActivity.java
- edu.upb.lp.androidInternalFiles.AndroidGameActivity
- edu.upb.lp.androidInternalFiles.AndroidGameActivity$1
-edu/upb/lp/progra/ClashOfHeroes/ClashOfHeroes.java
- edu.upb.lp.progra.ClashOfHeroes.ClashOfHeroes
+edu/upb/lp/progra/ClashOfHeroes/Ficha.java
+ edu.upb.lp.progra.ClashOfHeroes.Ficha
 edu/upb/lp/progra/ClashOfHeroes/Player.java
  edu.upb.lp.progra.ClashOfHeroes.Player
+edu/upb/lp/progra/ClashOfHeroes/Animador.java
+ edu.upb.lp.progra.ClashOfHeroes.Animador
+edu/upb/lp/progra/ClashOfHeroes/Atacante.java
+ edu.upb.lp.progra.ClashOfHeroes.Atacante
+edu/upb/lp/progra/ClashOfHeroes/ClashOfHeroes.java
+ edu.upb.lp.progra.ClashOfHeroes.ClashOfHeroes
 edu/upb/lp/progra/ClashOfHeroes/ActionsManager.java
  edu.upb.lp.progra.ClashOfHeroes.ActionsManager
+edu/upb/lp/progra/ClashOfHeroes/Lanzador.java
+ edu.upb.lp.progra.ClashOfHeroes.Lanzador
