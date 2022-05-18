@@ -6,7 +6,6 @@ public class Ficha {
     private String tipo;
     private String name; //demon_rojo demon_morado demon_plomo
     private boolean cargando = false;
-    private int turnosParaAtacar = 0;
     private boolean soyMuro=false;
 
     public Ficha(String name,String tipo){
@@ -25,9 +24,6 @@ public class Ficha {
     }
     public void setCargando(boolean cargando){
         this.cargando = cargando;
-    }
-    public void setTurnosParaAtacar(int turnosParaAtacar){
-        this.turnosParaAtacar=turnosParaAtacar;
     }
 
     // get conseguir -> getter consigue el atributo
@@ -52,6 +48,5 @@ public class Ficha {
     public boolean siSoyMuro(){
         return soyMuro;
     }
-    //public Ficha copiaDe(Ficha ficha)
 }
 

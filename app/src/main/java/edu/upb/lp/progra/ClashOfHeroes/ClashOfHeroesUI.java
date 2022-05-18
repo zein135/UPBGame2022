@@ -14,25 +14,24 @@ public class ClashOfHeroesUI implements UI {
     @Override
     public void onButtonPressed(String name) {
         if(name.equals ("STAR")){
-            //gui.configureScreen(1,1,0,0,true,0);
-            //gui.setImageOnCell(0,0 ,"clash_of_hereos_fondo_desierto");
             gui.removeButton("STAR");
             gui.configureScreen(13,8,0,0,true,0.15);
             gui.addButton("RESTART",16,50);
             game.initGame();
 
         }
-        if(name.equals("RESTART"))
-            game.initGame();
-        if(name.equals("Eliminar"))
+        if(name.equals("RESTART")) {
+            restart();
+        }
+        else if(name.equals("Eliminar"))
             game.eliminar();
-        if(name.equals("Mover"))
+        else if(name.equals("Mover"))
             game.mover();
-        if(name.equals("Enviar"))
+        else if(name.equals("Enviar"))
             game.enviar();
-        if(name.equals("Jalar"))
+        else if(name.equals("Jalar"))
             game.jalarHaciaAtras();
-        if(name.equals("Llamar"))
+        else if(name.equals("Llamar"))
             game.llamar();
     }
 
@@ -47,7 +46,10 @@ public class ClashOfHeroesUI implements UI {
       gui.setImageOnCell(0,0,"clash_of_heroes_portada");
       gui.addButton("STAR" , 16,58 );
     }
-
+    public void restart(){
+        game=new ClashOfHeroes(this);
+        game.initGame();
+    }
     public void drawUnit(int row,int column,String name){
         gui.setImageOnCell(row,column,name);
     }
@@ -69,9 +71,7 @@ public class ClashOfHeroesUI implements UI {
     public void eliminarMensaje(String name){
         gui.removeTextField(name);
     }
-    public void eliminarTodosLosMensaje(){
-        gui.removeAllTextFields();
-    }
+
     public void mostrarMensaje(String name,String mensaje){
         gui.addTextField(name,mensaje,15,20);
     }

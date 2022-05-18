@@ -16,6 +16,7 @@ public class JaladorHaciaAtras implements Runnable{
 
     public void stop() {
         running = false;
+        //game.draw();
     }
 
     @Override

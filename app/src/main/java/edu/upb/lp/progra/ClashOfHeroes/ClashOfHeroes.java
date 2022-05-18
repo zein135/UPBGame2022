@@ -9,12 +9,6 @@ public class ClashOfHeroes {
     private boolean turnoJugador1=true;
     private Animador animador;
     private JaladorHaciaAtras jalador = new JaladorHaciaAtras(this);
-    //private Lanzador lanzador = new Lanzador(this);
-    //private ActionsManager actionsManager=new ActionsManager();
-    private int animacionHorizontal;
-    private int animacionVertical;
-    private boolean animacionTurnoJugador1;
-    private String animacionNombre;
     public ClashOfHeroes(ClashOfHeroesUI ui){
         this.ui=ui;
     }
@@ -23,10 +17,6 @@ public class ClashOfHeroes {
     }
     public ClashOfHeroesUI getUi(){
         return ui;
-    }
-    public int generateRandom(int min,int max){
-        int random=(int)Math.floor(Math.random()*(max-min+1)+min);
-        return random;
     }
     public void dibujarVidasYMovimientos(){
         ui.eliminarMensaje("vidaJugador1");
@@ -47,25 +37,27 @@ public class ClashOfHeroes {
             }
         }
         animador = new Animador(this);
+        //EL ANIMADOR ES EL MISMO PARA EL JUGADOR 1 Y 2
         jugador1.asignarActionsManagerYAnimador(animador);
         jugador2.asignarActionsManagerYAnimador(animador);
         jugador1.setEnemigo(jugador2);
         jugador2.setEnemigo(jugador1);
+        //jalador el mismo para jugador 1 y 2
         jugador1.asignarJalador(jalador);
         jugador2.asignarJalador(jalador);
-        //jugador1.asignarLanzador(lanzador);
-        //jugador2.asignarLanzador(lanzador);
         Ficha[][] tableroJugador1=initPlayerBoard(jugador1);
+        //el tablero es distinto para jugador 1 y 2
         Ficha[][] tableroJugador2=initPlayerBoard(jugador2);
-        actualizarTableroJugador(tableroJugador1);
-        actualizarTableroEnemigo(tableroJugador2);
+        //recorremos el tablero del jugador 1 y 2 de los cuales actualizamos el board
+        actualizarTablero();
         dibujarVidasYMovimientos();
         draw();
+        //el draw hace que muestre las imagenes que estan en le board
     }
     public Ficha[][] initPlayerBoard(Player jugador){
+        //lo llena con la mayor cantidad de fichas
         jugador.initBoard();
         Ficha[][] tableroJugador=jugador.llenarTablero(MAX_UNITS);
-        //actualizarTableroJugador(tableroJugador);
         jugador.setMovimientos(3);
         return tableroJugador;
     }
@@ -78,71 +70,84 @@ public class ClashOfHeroes {
         }
     }
     private void actualizarTableroEnemigo(Ficha[][] tableroEnemigo){
-        //int rowBoard=5;
         for(int row=0;row<6;row++){
             for(int col=0;col<8;col++){
                 board[5-row][col]=tableroEnemigo[row][col];
             }
-            //rowBoard--;
         }
     }
     public void draw(){
         for( int row = 0; row < 13 ; row++){
             for(int col=0;col<8;col++){
+                //si es igual a null la casilla esta vacia
                 if(board[row][col]==null){
-                    //== null no tiene nada XD y si no tenemos nada que nos lo dibuje el fonfo
                     ui.drawUnit(row,col,"clash_of_heroes_fondo_desierto");
                 }else{
                     ui.drawUnit(row,col,board[row][col].getName());
                 }
             }
         }
+        dibujarVidasYMovimientos();
     }
     public void click(int horizontal,int vertical){
-        Player jugadorActual=obtenerJugadorActual();
-        boolean seSelecciono=false;
-        if(turnoJugador1){
-            if(horizontal>=7 && horizontal<=12){
-                jugador1.setUltimoVertical(vertical);
-                jugador1.setUltimoHorizontal(horizontal-7);
-                seSelecciono=true;
+        //si el animador ya no esta animando va a accionar el click XD
+        if(!animador.estoyAnimando()) {
+            Player jugadorActual = obtenerJugadorActual();
+            // nos indica si una casilla fue selccionada valida
+            boolean seSelecciono = false;
+            // pregunta si el jugador hizo click en su tablero
+            if (turnoJugador1) {
+                //el if pregunta si esta dentro del tablero del jugador 1
+                if (horizontal >= 7 && horizontal <= 12) {
+                    jugador1.setUltimoVertical(vertical);
+                    jugador1.setUltimoHorizontal(horizontal - 7);
+                    seSelecciono = true;
+                }
+            } else {
+                // y lo mismo para este if pregunta si se encuentra en el jugador 2
+                if (horizontal <= 5) {
+                    jugador2.setUltimoHorizontal(5 - horizontal);
+                    jugador2.setUltimoVertical(vertical);
+                    seSelecciono = true;
+                }
             }
-        } else{
-            if(horizontal<=5){
-                jugador2.setUltimoHorizontal(5-horizontal);
-                jugador2.setUltimoVertical(vertical);
-                seSelecciono=true;
-            }
-        }
-        if(seSelecciono) {
-            draw();
-            if (board[horizontal][vertical] != null) {
-                ui.drawUnit(horizontal,vertical,board[horizontal][vertical].getName()+"_selected");
-                if(!jugadorActual.getGuardeFicha()) {
-                    ui.dibujarBoton("Eliminar");
-                    if (!board[horizontal][vertical].siSoyMuro()) {
-                        ui.dibujarBoton("Mover");
+                //si no hay nada en esa poscion quiero que me dbujes un selcted que esta con borde azul
+            if (seSelecciono) {
+                draw();
+                if (board[horizontal][vertical] != null) {
+                    ui.drawUnit(horizontal, vertical, board[horizontal][vertical].getName() + "_selected");
+                    //si el jugador actual a guardado una ficha puede eliminar
+                    if (!jugadorActual.getGuardeFicha()) {
+                        ui.dibujarBoton("Eliminar");
+                        //si es que no es un muro podemos mover
+                        if (!board[horizontal][vertical].siSoyMuro()) {
+                            ui.dibujarBoton("Mover");
+                        }
                     }
                 }
             }
-        }
-        if(board[horizontal][vertical]==null){
-            ui.removerBoton("Mover");
-            ui.removerBoton("Eliminar");
+            //no puedo mover una casilla vacia y tampoco eliminarla XD
+            if (board[horizontal][vertical] == null) {
+                ui.removerBoton("Mover");
+                ui.removerBoton("Eliminar");
+            }
         }
     }
     public Player obtenerJugadorActual(){
+        //lo que nos indica quien es el jugador actual
         Player jugadorActual;
         if(turnoJugador1) jugadorActual=jugador1;
         else jugadorActual=jugador2;
         return jugadorActual;
     }
     public Player obtenerJugadorEnemigo(){
+        //y lo mismo para este metodo
         Player jugadorEnemigo;
         if(turnoJugador1) jugadorEnemigo=jugador2;
         else jugadorEnemigo=jugador1;
         return jugadorEnemigo;
     }
+    //preguntamos si tiene movimientos, de lo cual hace que cambien los valores, y eso hace que roten de turnos XD
     public void siCambiaTurnoJugador(){
         Player jugadorActual=obtenerJugadorActual();
         Player jugadorEnemigo=obtenerJugadorEnemigo();
@@ -152,19 +157,27 @@ public class ClashOfHeroes {
             else
                 ui.mensajeTemporal("Turno de Jugador 1");
             turnoJugador1=!turnoJugador1;
+            //ahi le decimos al animador de quien es el turno
             animador.setAnimacionTurnoJugador1(turnoJugador1);
             animador.iniciarId();
+            //y despues vemos si el jugador tiene ficchas cargadas si tiene movimientos
             jugadorEnemigo.setMovimientos(3);
             jugadorEnemigo.verFichasCargadas();
             if(jugadorEnemigo.obtenerNumeroFichas()<MAX_UNITS){
                 ui.dibujarBoton("Llamar");
             }
-            actualizarTableroJugador(jugador1.getTablero());
-            actualizarTableroEnemigo(jugador2.getTablero());
+            actualizarTablero();
         }
         dibujarVidasYMovimientos();
-        //draw();
+        if(jugadorEnemigo.getVida()<=0){
+            if(turnoJugador1)
+                ui.mensajeTemporal("Gano Jugador 1");
+            else
+                ui.mensajeTemporal("Gano Jugador 2");
+            ui.restart();
+        }
     }
+    //guarda al jugador actual, de la cual le decimos el nombre de la ficha, y le dcimos a la ficha moverte
     public void mover(){
         Player jugadorActual=obtenerJugadorActual();
         jugadorActual.setGuardeFicha(true);
@@ -177,32 +190,30 @@ public class ClashOfHeroes {
         else{
             actualizarTableroEnemigo(jugador2.getTablero());
         }
-        draw();
         quitarbotones();
+        //al guardar elimino todos los botones y la unica accion que podemos hacer es enviar
         ui.dibujarBoton("Enviar");
     }
 
     public void enviar() {
         Player jugadorActual = obtenerJugadorActual();
+        //si tiene espacio le decimos al amimador cual vertical y le decimos cual es la ultina cassilla que emos seleccionado
         if(jugadorActual.getNumUnits()[jugadorActual.getUltimoVertical()]<6) {
             animador.setAnimacionVertical(jugadorActual.getUltimoVertical());
+            //le decimos al animador depende de los valores, de la cual
             if(turnoJugador1)
                 animador.setAnimacionHorizontal(board.length-1);
-                //animacionHorizontal=board.length-1;
             else
                 animador.setAnimacionHorizontal(0);
-                //animacionHorizontal=0;
+            //le decimos al animador a quien le toca
             animador.setAnimacionTurnoJugador1(turnoJugador1);
-            //animacionTurnoJugador1=turnoJugador1;
             jugadorActual.enviar();
             animador.lanzar();
-            //lanzador.start();
             jugadorActual.setGuardeFicha(false);
             if(turnoJugador1)
                 actualizarTableroJugador(jugadorActual.getTablero());
             else
                 actualizarTableroEnemigo(jugadorActual.getTablero());
-           // draw();
             ui.removerBoton("Enviar");
             siCambiaTurnoJugador();
             quitarbotones();
@@ -233,6 +244,7 @@ public class ClashOfHeroes {
         quitarbotones();
     }
     public void jalarHaciaAtras(){
+        //obtiene jugador actual XD
         Player jugadorActual=obtenerJugadorActual();
         jugadorActual.jalarHaciaAtras();
         if(turnoJugador1)
@@ -241,30 +253,7 @@ public class ClashOfHeroes {
             actualizarTableroEnemigo(jugadorActual.getTablero());
         draw();
     }
-    /*public void lanzarJugador(){
-        System.out.println(animacionHorizontal);
-        if(animacionHorizontal+1<board.length)
-            ui.drawUnit(animacionHorizontal+1,animacionVertical,"clash_of_heroes_fondo_desierto");
-        ui.drawUnit(animacionHorizontal,animacionVertical,animacionNombre);
-        animacionHorizontal--;
-        if(animacionHorizontal<6 || board[animacionHorizontal-1][animacionVertical]!=null) {
-            lanzador.stop();
-        }
-    }
-    public void lanzarEnemigo(){
-        if(animacionHorizontal-1>=0)
-            ui.drawUnit(animacionHorizontal-1,animacionVertical,"clash_of_heroes_fondo_desierto");
-        ui.drawUnit(animacionHorizontal,animacionVertical,animacionNombre);
-        animacionHorizontal++;
-        if(animacionHorizontal>5 || board[animacionHorizontal+1][animacionVertical]!=null)
-            lanzador.stop();
-    }
-    public void lanzar(){
-        if(animacionTurnoJugador1)
-            lanzarJugador();
-        else
-            lanzarEnemigo();
-    }*/
+        //hace que haya un bucle, y una vez que termine el programa vuelva a corer otra vez
     public void executeLater(Runnable r, int ms){
         ui.executeLater(r,ms);
     }
@@ -273,7 +262,6 @@ public class ClashOfHeroes {
         Player jugadorActual=obtenerJugadorActual();
         ui.removerBoton("Llamar");
         jugadorActual.llenarTablero(MAX_UNITS-jugadorActual.obtenerNumeroFichas());
-        dibujarVidasYMovimientos();
         if(turnoJugador1)
             actualizarTableroJugador(jugadorActual.getTablero());
         else
@@ -286,5 +274,3 @@ public class ClashOfHeroes {
         actualizarTableroEnemigo(jugador2.getTablero());
     }
 }
-
-// TODO para avanzr con los ataques no debe contar con los muros

@@ -1,13 +1,9 @@
 package edu.upb.lp.progra.ClashOfHeroes;
 
 public class Lanzador implements Runnable{
-    //private ClashOfHeroes game;
     private Animador animador;
     private boolean running = false;
     private boolean animacionTurnoJugador1;
-    /*public Lanzador(ClashOfHeroes game){
-        this.game=game;
-    }*/
     public Lanzador(Animador animador){
         this.animador=animador;
     }
